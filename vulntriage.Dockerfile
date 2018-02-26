@@ -12,7 +12,7 @@ git clone https://github.com/pwndbg/pwndbg.git /opt/pwndbg && cd /opt/pwndbg && 
 git clone https://github.com/jfoote/exploitable.git /opt/exploitable && cd /opt/exploitable && python setup.py install && \
 git clone https://github.com/fuzzamos/checksec.sh.git /opt/checksec && \
 git clone https://github.com/fuzzamos/fuzzdiff.git /opt/fuzzdiff && cd ~/WRKSRC && \
-curl -L https://github.com/DynamoRIO/dynamorio/releases/download/release_7_0_0_rc1/DynamoRIO-Linux-7.0.0-RC1.tar.gz | tar zxf - && 
+curl -L https://github.com/DynamoRIO/dynamorio/releases/download/release_7_0_0_rc1/DynamoRIO-Linux-7.0.0-RC1.tar.gz | tar zxf - && \ 
 apt-get -y autoremove && \
 rm -rf /var/lib/apt/lists/*
 
