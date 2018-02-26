@@ -1,4 +1,4 @@
-FROM fdiskyou/afl:0.1
+FROM fdiskyou/afl-qemu:0.1
 MAINTAINER rui@deniable.org
 
 RUN dpkg --add-architecture i386 && \
