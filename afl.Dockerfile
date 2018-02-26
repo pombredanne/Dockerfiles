@@ -10,7 +10,6 @@ mkdir -p ~/WRKSRC && mkdir -p ~/TARGETS && mkdir -p ~/WRKDIR && cd ~/WRKSRC && \
 curl -L http://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz | tar zxf - && \
 cd afl-* && make && cd llvm_mode && make && cd .. && make install && \
 echo core > /proc/sys/kernel/core_pattern && \
-echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor && \
 apt-get -y autoremove && \
 rm -rf /var/lib/apt/lists/*
 
