@@ -21,7 +21,7 @@ git clone https://github.com/niklasb/libc-database /opt/libc-database && \
 git clone https://github.com/hellman/xortool.git /opt/xortool && cd /opt/xortool && python setup.py install && \
 git clone https://github.com/zardus/preeny.git /opt/preeny && cd /opt/preeny && make && \
 git clone https://github.com/packz/ropeme.git /opt/ropeme && sed -i 's/distorm/distorm3/g' /opt/ropeme/ropeme/gadgets.py && \
-git clone https://github.com/sashs/Ropper.git /opt/ropper && cd /opt/ropper && python setup.py install && rm -rf /opt/ropper && \
+git clone https://github.com/sashs/Ropper.git /opt/ropper && cd /opt/ropper && python setup.py install && cd && rm -rf /opt/ropper && \
 git clone https://github.com/aquynh/capstone.git /opt/capstone && cd /opt/capstone && ./make.sh && ./make.sh install  && \
 cd bindings/python && make install && make install3 && \
 git clone https://github.com/fuzzamos/fuzzdiff.git /opt/fuzzdiff && cd ~/WRKSRC && \
