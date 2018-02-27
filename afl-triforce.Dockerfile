@@ -9,7 +9,7 @@ env DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get -y upgrade && \
 apt-get -yq install linux-image-$(uname -r) && cd ~/WRKSRC && \
 git clone https://github.com/nccgroup/TriforceAFL.git && \
-cd TriforceAFL && make && \
+cd TriforceAFL && make && cd .. && \
 git clone https://github.com/nccgroup/TriforceLinuxSyscallFuzzer.git && \
 cd TriforceLinuxSyscallFuzzer && make && mkdir kern && \
 cp /boot/vmlinuz* kern/bzImage && \
