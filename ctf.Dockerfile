@@ -9,7 +9,7 @@ apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev &
 apt-get -y install libtool autoconf pkg-config python-dev lzma lzma-dev sudo && \ 
 apt-get -y install liblzma-dev liblz-dev liblz1 valgrind valgrind-dbg gdb htop && \
 apt-get -y install nasm binwalk binutils strace ltrace unzip libtool-bin screen && \
-apt-get -y install python3-dev python-pip python3-pip radare2 radare2-plugins && \
+apt-get -y install python3-dev python-pip python3-pip radare2 radare2-plugins wget && \
 apt-get -y install libc6:i386 libncurses5:i386 libstdc++6:i386 libc6-dev-i386 libini-config-dev && \
 pip install pycipher uncompyle ropgadget distorm3 filebytes r2pipe && \
 pip install --upgrade pwntools && pip install docopt python-constraint && \
