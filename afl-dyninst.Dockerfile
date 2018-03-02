@@ -1,10 +1,6 @@
 FROM fdiskyou/afl:0.1
 MAINTAINER rui@deniable.org
 
-WORKDIR ~/WRKDIR
- 
-WRK ~/WRKDIR
-ENV TARGETS ~/TARGETS
 ENV WRKSRC /opt
 ENV DEBIAN_FRONTEND noninteractive
 
