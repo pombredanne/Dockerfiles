@@ -11,7 +11,7 @@ apt-get -yq install linux-image-$(uname -r) && cd $WRKSRC && \
 git clone https://github.com/nccgroup/TriforceAFL.git && \
 cd TriforceAFL && make && cd .. && \
 git clone https://github.com/nccgroup/TriforceLinuxSyscallFuzzer.git && \
-cd TriforceLinuxSyscallFuzzer && make && mkdir $K && \
+cd TriforceLinuxSyscallFuzzer && make && mkdir -p $K && \
 cp /boot/vmlinuz* kern/bzImage && \
 cp /boot/System.map* kern/kallsyms && \
 make inputs && \
