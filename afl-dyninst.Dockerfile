@@ -1,6 +1,7 @@
 FROM fdiskyou/afl:0.1
 MAINTAINER rui@deniable.org
 
+# check https://hub.docker.com/u/fdiskyou/ for more information
 ENV WRKSRC /opt
 ENV DEBIAN_FRONTEND noninteractive
 
