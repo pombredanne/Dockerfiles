@@ -27,7 +27,7 @@ git clone https://github.com/aquynh/capstone.git $WRKSRC/capstone && cd $WRKSRC/
 cd bindings/python && make install && make install3 && \
 git clone https://github.com/fuzzamos/fuzzdiff.git $WRKSRC/fuzzdiff && cd $WRKSRC && \
 curl -L https://github.com/DynamoRIO/dynamorio/releases/download/release_7_0_0_rc1/DynamoRIO-Linux-7.0.0-RC1.tar.gz | tar zxf - && \ 
-mkdir -p /opt/rp && wget https://github.com/downloads/0vercl0k/rp/rp-lin-x64 -P $WRKSRC/rp && \
+mkdir -p $WRKSRC/rp && wget https://github.com/downloads/0vercl0k/rp/rp-lin-x64 -P $WRKSRC/rp && \
 wget https://github.com/downloads/0vercl0k/rp/rp-lin-x86 -P $WRKSRC/rp && \
 apt-get -qy clean autoremove && \
 rm -rf /var/lib/apt/lists/*
