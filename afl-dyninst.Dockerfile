@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update && apt-get -y upgrade && \
-apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev && \
+apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev zlib1g-dev m4 libdw1 && \
 cd $WRKSRC && cd afl-* && ln -s afl-analyze afl && cd $WRKSRC && \
 cd $WRKSRC && git clone https://github.com/dyninst/dyninst.git && \
 cd dyninst && mkdir build && cd build && cmake .. && make && make install && \
