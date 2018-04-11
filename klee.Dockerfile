@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.10.0
+FROM ubuntu:trusty 
 MAINTAINER rui@deniable.org
 
 # prerequisites
