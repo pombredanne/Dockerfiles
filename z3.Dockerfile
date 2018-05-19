@@ -21,4 +21,4 @@ cd $WRKSRC && chown -R z3:z3 z3 && \
 rm -rf /var/lib/apt/lists/*
 
 USER z3 
-WORKDIR /home/z3
+CMD ["/bin/bash"]
