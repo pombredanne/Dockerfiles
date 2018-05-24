@@ -20,5 +20,7 @@ echo z3:z3 | chpasswd && usermod -aG sudo z3 && \
 cd $WRKSRC && chown -R z3:z3 z3 && \
 rm -rf /var/lib/apt/lists/*
 
-USER z3 
+USER z3
+WORKDIR /home/z3
+
 CMD ["/bin/bash"]
