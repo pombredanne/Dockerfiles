@@ -12,7 +12,7 @@ RUN apt-get -y update && \
   useradd -s /bin/bash -m angr && \
   echo angr:angr | chpasswd && usermod -aG sudo angr && \
   su - angr -c "git clone https://github.com/angr/angr-dev && cd angr-dev && ./setup.sh -e angr" && \
-  su - angr -c "echo 'workon angr' >> /home/angr/.bashrc"
+  su - angr -c "echo 'workon angr' >> /home/angr/.bashrc" && \
   rm -rf /var/lib/apt/lists/*
 
 USER angr
