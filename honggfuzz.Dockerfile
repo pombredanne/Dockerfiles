@@ -18,7 +18,7 @@ cd $WRKSRC && git clone https://github.com/01org/processor-trace && \
 cd processor-trace/ && mkdir build && cd build && \
 cmake -G "Unix Makefiles" .. && make && make install && \
 mkdir -p $TARGETS && mkdir -p $CORPUS && cd $WRKSRC && \
-sudo apt-get install libbfd-dev libunwind-dev && \
+apt-get install libbfd-dev libunwind-dev && \
 git clone https://github.com/google/honggfuzz && \
 cd honggfuzz && make -j4 && make install && \
 apt-get -qy clean autoremove && \
