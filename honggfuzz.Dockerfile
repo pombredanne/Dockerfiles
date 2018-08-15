@@ -14,6 +14,7 @@ SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update && apt-get -y upgrade && \
 apt-get -y install python build-essential git cmake clang && \
+apt-get -y install binutils-dev libunwind-dev libunwind8 && \
 cd $WRKSRC && git clone https://github.com/01org/processor-trace && \
 cd processor-trace/ && mkdir build && cd build && \
 cmake -G "Unix Makefiles" .. && make && make install && \
