@@ -3,12 +3,10 @@ MAINTAINER rui@deniable.org
 
 LABEL description="Base image for AFL with LLVM"
 
-WORKDIR ~/WRKDIR
-COPY scripts/tweaks.sh ~/WRKDIR
-COPY scripts/ramdisk.sh ~/WRKDIR
+WORKDIR /WRKDIR
 
-ENV TARGETS ~/TARGETS
-ENV CORPUS ~/WRKDIR/corpus
+ENV TARGETS /TARGETS
+ENV CORPUS /WRKDIR/corpus
 ENV WRKSRC /opt
 ENV DEBIAN_FRONTEND noninteractive
 

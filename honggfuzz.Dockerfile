@@ -3,17 +3,17 @@ MAINTAINER rui@deniable.org
 
 LABEL description="Base image for honggfuzz"
 
-WORKDIR ~/WRKDIR
+WORKDIR /WRKDIR
 
-ENV TARGETS ~/TARGETS
-ENV CORPUS ~/WRKDIR/corpus
+ENV TARGETS /TARGETS
+ENV CORPUS /WRKDIR/corpus
 ENV WRKSRC /opt
 ENV DEBIAN_FRONTEND noninteractive
 
 SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update && apt-get -y upgrade && \
-apt-get -y install python build-essential git cmake clang && \
+apt-get -y install python build-essential git cmake llvm-4.0 clang-4.0 && \
 apt-get -y install binutils-dev libunwind-dev libunwind8 && \
 cd $WRKSRC && git clone https://github.com/01org/processor-trace && \
 cd processor-trace/ && mkdir build && cd build && \
