@@ -5,6 +5,7 @@ MAINTAINER rui@deniable.org
 ENV WRKSRC /opt
 ENV DEBIAN_FRONTEND noninteractive
 ENV DISPLAY :0
+ENV QT_X11_NO_MITSHM 1
 
 RUN dpkg --add-architecture i386 && \
 apt-get update && apt-get -y upgrade && \
