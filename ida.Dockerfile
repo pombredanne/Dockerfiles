@@ -6,14 +6,6 @@ ENV WRKSRC /opt
 ENV DEBIAN_FRONTEND noninteractive
 ENV DISPLAY :0
 
-RUN export uid=1000 gid=1000 && \
-  mkdir -p /home/idauser && \
-  echo "idauser:x:${uid}:${gid}:Developer,,,:/home/idauser:/bin/bash" >> /etc/passwd && \
-  echo "idauser:x:${uid}:" >> /etc/group && \
-  echo "idauser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/idauser && \
-  chmod 0440 /etc/sudoers.d/idauser && \
-  chown ${uid}:${gid} -R /home/idauser
-
 RUN dpkg --add-architecture i386 && \
 apt-get update && apt-get -y upgrade && \
 apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev libtool pkg-config python-dev lzma \
@@ -23,6 +15,14 @@ apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev l
   libxext6:i386 libxrender1:i386 libglib2.0-0:i386 libfontconfig1:i386 libsm6:i386 libfreetype6:i386 libglib2.0-0:i386 && \
 apt-get -qy clean autoremove && \
 rm -rf /var/lib/apt/lists/*
+
+RUN export uid=1000 gid=1000 && \
+  mkdir -p /home/idauser && \
+  echo "idauser:x:${uid}:${gid}:Developer,,,:/home/idauser:/bin/bash" >> /etc/passwd && \
+  echo "idauser:x:${uid}:" >> /etc/group && \
+  echo "idauser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/idauser && \
+  chmod 0440 /etc/sudoers.d/idauser && \
+  chown ${uid}:${gid} -R /home/idauser
 
 USER idauser
 ENV HOME /home/idauser
