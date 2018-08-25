@@ -6,13 +6,14 @@ ENV WRKSRC /opt
 ENV DEBIAN_FRONTEND noninteractive
 ENV DISPLAY :0
 ENV QT_X11_NO_MITSHM 1
+ENV PYTHONPATH /usr/local/lib/python2.7/dist-packages/
 
 RUN dpkg --add-architecture i386 && \
 apt-get update && apt-get -y upgrade && \
 apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev libtool pkg-config python-dev lzma \
   lzma-dev sudo liblzma-dev liblz-dev liblz1 autoconf gdb htop nasm binwalk binutils strace ltrace unzip libtool-bin \
   screen python3-dev python-pip python3-pip radare2 radare2-plugins wget libc6:i386 libncurses5:i386 libstdc++6:i386 \
-  libc6-dev-i386 libini-config-dev \
+  libc6-dev-i386 libini-config-dev python-pyqt5 \
   libxext6:i386 libxrender1:i386 libglib2.0-0:i386 libfontconfig1:i386 libsm6:i386 libfreetype6:i386 libglib2.0-0:i386 && \
 apt-get -qy clean autoremove && \
 rm -rf /var/lib/apt/lists/*
