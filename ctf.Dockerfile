@@ -11,7 +11,7 @@ apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev l
   pkg-config python-dev lzma lzma-dev sudo liblzma-dev liblz-dev liblz1 valgrind valgrind-dbg \
   gdb htop nasm binwalk binutils strace ltrace unzip libtool-bin screen python3-dev python-pip \
   python3-pip radare2 radare2-plugins wget libc6:i386 libncurses5:i386 libstdc++6:i386 \
-  libc6-dev-i386 libini-config-dev \
+  libc6-dev-i386 libini-config-dev curl \
   libxext6:i386 libxrender1:i386 libglib2.0-0:i386 libfontconfig1:i386 libsm6:i386 libfreetype6:i386 libglib2.0-0:i386 && \
 pip install angrgdb pycipher uncompyle ropgadget distorm3 filebytes r2pipe && \
 pip install docopt python-constraint && \
@@ -25,8 +25,6 @@ git clone https://github.com/hellman/xortool.git $WRKSRC/xortool && cd $WRKSRC/x
 git clone https://github.com/zardus/preeny.git $WRKSRC/preeny && cd $WRKSRC/preeny && make && \
 git clone https://github.com/packz/ropeme.git $WRKSRC/ropeme && sed -i 's/distorm/distorm3/g' $WRKSRC/ropeme/ropeme/gadgets.py && \
 git clone https://github.com/sashs/Ropper.git $WRKSRC/ropper && cd $WRKSRC/ropper && python setup.py install && cd && rm -rf $WRKSRC/ropper && \
-git clone https://github.com/aquynh/capstone.git $WRKSRC/capstone && cd $WRKSRC/capstone && ./make.sh && ./make.sh install  && \
-cd bindings/python && make install && make install3 && \
 git clone https://github.com/fuzzamos/fuzzdiff.git $WRKSRC/fuzzdiff && cd $WRKSRC && \
 curl -L https://github.com/DynamoRIO/dynamorio/releases/download/release_7_0_0_rc1/DynamoRIO-Linux-7.0.0-RC1.tar.gz | tar zxf - && \ 
 mkdir -p $WRKSRC/rp && wget https://github.com/downloads/0vercl0k/rp/rp-lin-x64 -P $WRKSRC/rp && \
