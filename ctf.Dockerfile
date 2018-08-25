@@ -11,7 +11,8 @@ apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev l
   pkg-config python-dev lzma lzma-dev sudo liblzma-dev liblz-dev liblz1 valgrind valgrind-dbg \
   gdb htop nasm binwalk binutils strace ltrace unzip libtool-bin screen python3-dev python-pip \
   python3-pip radare2 radare2-plugins wget libc6:i386 libncurses5:i386 libstdc++6:i386 \
-  libc6-dev-i386 libini-config-dev && \
+  libc6-dev-i386 libini-config-dev \
+  libxext6:i386 libxrender1:i386 libglib2.0-0:i386 libfontconfig1:i386 libsm6:i386 libfreetype6:i386 libglib2.0-0:i386 && \
 pip install pycipher uncompyle ropgadget distorm3 filebytes r2pipe && \
 pip install --upgrade pwntools && pip install docopt python-constraint && \
 git clone https://github.com/pwndbg/pwndbg.git $WRKSRC/pwndbg && cd $WRKSRC/pwndbg && ./setup.sh && \
