@@ -13,9 +13,9 @@ apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev l
   python3-pip radare2 radare2-plugins wget libc6:i386 libncurses5:i386 libstdc++6:i386 \
   libc6-dev-i386 libini-config-dev \
   libxext6:i386 libxrender1:i386 libglib2.0-0:i386 libfontconfig1:i386 libsm6:i386 libfreetype6:i386 libglib2.0-0:i386 && \
-pip install pycipher uncompyle ropgadget distorm3 filebytes r2pipe && \
+pip install angrgdb pycipher uncompyle ropgadget distorm3 filebytes r2pipe && \
 pip install --upgrade pwntools && pip install docopt python-constraint && \
-git clone https://github.com/pwndbg/pwndbg.git $WRKSRC/pwndbg && cd $WRKSRC/pwndbg && ./setup.sh && \
+git clone https://github.com/pwndbg/pwndbg.git $WRKSRC/pwndbg && \
 git clone https://github.com/jfoote/exploitable.git $WRKSRC/exploitable && cd $WRKSRC/exploitable && python setup.py install && \
 git clone https://github.com/fuzzamos/checksec.sh.git $WRKSRC/checksec && \
 git clone https://github.com/longld/peda.git $WRKSRC/peda && \
@@ -30,6 +30,13 @@ git clone https://github.com/fuzzamos/fuzzdiff.git $WRKSRC/fuzzdiff && cd $WRKSR
 curl -L https://github.com/DynamoRIO/dynamorio/releases/download/release_7_0_0_rc1/DynamoRIO-Linux-7.0.0-RC1.tar.gz | tar zxf - && \ 
 mkdir -p $WRKSRC/rp && wget https://github.com/downloads/0vercl0k/rp/rp-lin-x64 -P $WRKSRC/rp && \
 wget https://github.com/downloads/0vercl0k/rp/rp-lin-x86 -P $WRKSRC/rp && \
+wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py && \
+echo source ~/.gdbinit-gef.py >> ~/.gdbinit && \
+echo "set follow-fork-mode child" >> ~/.gdbinit && \
+echo "set disassembly-flavor intel" >> ~/.gdbinit && \
+echo "source /opt/pwndbg/gdbinit.py" >> ~/.gdbinit && \
+echo "dir /usr/src/glibc/glibc-2.26/malloc" >> ~/.gdbinit && \
+echo "python import angrgdb.commands" >> ~/.gdbinit && \
 apt-get -qy clean autoremove && \
 rm -rf /var/lib/apt/lists/*
 
