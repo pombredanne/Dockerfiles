@@ -15,7 +15,8 @@ apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev l
   libxext6:i386 libxrender1:i386 libglib2.0-0:i386 libfontconfig1:i386 libsm6:i386 libfreetype6:i386 libglib2.0-0:i386 && \
 pip install angrgdb pycipher uncompyle ropgadget distorm3 filebytes r2pipe && \
 pip install --upgrade pwntools && pip install docopt python-constraint && \
-git clone https://github.com/pwndbg/pwndbg.git $WRKSRC/pwndbg && \
+pip install capsone keystone-engine unicorn && \
+git clone https://github.com/pwndbg/pwndbg.git $WRKSRC/pwndbg && cd $WRKSRC/pwndbg && ./setup.sh && \
 git clone https://github.com/jfoote/exploitable.git $WRKSRC/exploitable && cd $WRKSRC/exploitable && python setup.py install && \
 git clone https://github.com/fuzzamos/checksec.sh.git $WRKSRC/checksec && \
 git clone https://github.com/longld/peda.git $WRKSRC/peda && \
