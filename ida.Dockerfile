@@ -1,4 +1,4 @@
-FROM ubuntu:xenial 
+FROM ubuntu:zesty 
 MAINTAINER rui@deniable.org
 
 # check https://hub.docker.com/u/fdiskyou/ for more information
