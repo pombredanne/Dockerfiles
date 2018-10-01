@@ -18,6 +18,11 @@ apt-get -y install git cmake libelf-dev libelf1 libiberty-dev libboost-all-dev l
 apt-get -qy clean autoremove && \
 rm -rf /var/lib/apt/lists/*
 
+# most of the times I need this... 
+RUN pip3 install angr && \
+  pip3 install angrdbg && \
+  cd $WRKSRC && git clone https://github.com/andreafioraldi/IDAngr
+
 RUN export uid=1000 gid=1000 && \
   mkdir -p /home/idauser && \
   echo "idauser:x:${uid}:${gid}:Developer,,,:/home/idauser:/bin/bash" >> /etc/passwd && \
