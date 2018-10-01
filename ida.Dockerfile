@@ -19,10 +19,10 @@ apt-get -qy clean autoremove && \
 rm -rf /var/lib/apt/lists/*
 
 # most of the times I need this... 
-RUN pip install --upgrade pip && \
-  pip install rpyc && \
-  pip install angrdbg && \
-  cd $WRKSRC && git clone https://github.com/andreafioraldi/IDAngr
+#RUN pip install --upgrade pip && \
+#  pip install rpyc && \
+#  pip install angrdbg && \
+#  cd $WRKSRC && git clone https://github.com/andreafioraldi/IDAngr
 
 RUN export uid=1000 gid=1000 && \
   mkdir -p /home/idauser && \
