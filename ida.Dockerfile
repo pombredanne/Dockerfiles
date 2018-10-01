@@ -1,4 +1,4 @@
-FROM ubuntu:zesty 
+FROM ubuntu:17.04
 MAINTAINER rui@deniable.org
 
 # check https://hub.docker.com/u/fdiskyou/ for more information
