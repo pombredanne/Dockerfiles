@@ -18,11 +18,9 @@ apt-get -y install git vim cmake libelf-dev libelf1 libiberty-dev libboost-all-d
 apt-get -qy clean autoremove && \
 rm -rf /var/lib/apt/lists/*
 
-# most of the times I need this... 
-#RUN pip install --upgrade pip && \
-#  pip install rpyc && \
-#  pip install angrdbg && \
-#  cd $WRKSRC && git clone https://github.com/andreafioraldi/IDAngr
+# most of the times I need this... have a look at http://www.hexblog.com/?p=726 
+#RUN cd $WRKSRC && git clone https://github.com/andreafioraldi/IDAngr
+#RUN pip install rpyc && pip install appdirs && pip install angrdbg
 
 RUN export uid=1000 gid=1000 && \
   mkdir -p /home/idauser && \
