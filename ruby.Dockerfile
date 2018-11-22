@@ -9,7 +9,7 @@ ENV QT_X11_NO_MITSHM 1
 
 RUN apt-get update && apt-get -y upgrade && \
 apt-get -y install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev && \
-apt-get -y install zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev ruby bundler && \ 
+apt-get -y install zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev ruby bundler && \ 
 apt-get -qy clean autoremove && \
 rm -rf /var/lib/apt/lists/*
 
